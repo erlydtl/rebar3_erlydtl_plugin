@@ -26,7 +26,7 @@
 %% THE SOFTWARE.
 %% -------------------------------------------------------------------
 
-%% The rebar_erlydtl_compiler module is a plugin for rebar that compiles
+%% The rebar_erlydtl_plugin module is a plugin for rebar that compiles
 %% ErlyDTL templates.  By default, it compiles all priv/templates/*.dtl
 %% to ebin/*_dtl.beam.
 %%
