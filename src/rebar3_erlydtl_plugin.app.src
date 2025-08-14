@@ -5,8 +5,7 @@
  ,{applications, [kernel, stdlib, erlydtl]}
  ,{env,[]}
  ,{modules, []}
-
  ,{contributors, ["Tristan Sloughter"]}
  ,{licenses, ["MIT"]}
- ,{links, [{"Github", "https://github.com/tsloughter/rebar3_erlydtl_plugin"}]}
+ ,{links, [{"Github", "https://github.com/erlydtl/rebar3_erlydtl_plugin"}]}
  ]}.
