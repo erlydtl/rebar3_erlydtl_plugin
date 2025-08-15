@@ -96,6 +96,8 @@
 
 -behaviour(provider).
 
+-include_lib("eunit/include/eunit.hrl").
+
 -export([init/1,
          do/1,
          format_error/1]).
@@ -263,3 +265,12 @@ referenced_dtls1(Step, DtlOpts, Seen) ->
         _ -> referenced_dtls1(sets:to_list(New), DtlOpts,
                               sets:union(New, Seen))
     end.
+
+%% check that we have pulled in a working erlydtl
+smoke_test() ->
+    M = erlydtl_plugin__template_test,
+    Template = <<"fie:foo({{ first }}, {{ second }}).">>,
+    {ok, M1} = erlydtl:compile_template(Template, M),
+    ?assertEqual(M1, M),
+    {ok, IoList} = M1:render(#{first => "foo", second => <<"bar">>}),
+    ?assertEqual("fie:foo(foo, bar).", unicode:characters_to_list(IoList)).
